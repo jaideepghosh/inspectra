@@ -43,7 +43,7 @@ const WelcomeScreen = ({
           <Button
             onClick={onResume}
             variant="outline"
-            className="w-full h-14 text-base font-display border-primary/30 text-primary hover:bg-primary/10"
+            className="w-full h-14 text-base font-display border-primary/30 text-primary hover:bg-primary/10 hover:text-white"
             size="lg"
           >
             RESUME INSPECTION
