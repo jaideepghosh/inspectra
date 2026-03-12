@@ -1,73 +1,203 @@
-# Welcome to your Lovable project
+# Inspectra
 
-## Project info
+**Buyer-centric vehicle inspection platform.**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Inspectra helps motorcycle buyers perform a **structured Pre-Delivery Inspection (PDI)** before accepting delivery from a dealership.
 
-## How can I edit this code?
+The app guides buyers through a step-by-step checklist, captures photo evidence, and generates a **professional inspection report** within minutes.
 
-There are several ways of editing your application.
+The first supported motorcycle is the **Triumph Scrambler 400 X**.
 
-**Use Lovable**
+# Why Inspectra?
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Most buyers accept a motorcycle delivery **without performing a proper inspection**.
 
-Changes made via Lovable will be committed automatically to this repo.
+Common problems include:
 
-**Use your preferred IDE**
+* Hidden scratches or cosmetic damage
+* Incorrect VIN or engine numbers
+* Odometer discrepancies
+* Missing accessories or documents
+* No proof if issues are discovered later
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Inspectra makes inspections **simple, structured, and evidence-based**.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# What You Can Do
 
-Follow these steps:
+### Guided Inspection
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Inspectra walks buyers through inspection sections step-by-step:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+* Bike Identity
+* Exterior Condition
+* Wheels & Tyres
+* Suspension & Chassis
+* Brakes
+* Engine & Controls
+* Electrical System
+* Instrument Cluster
+* Accessories & Documents
 
-# Step 3: Install the necessary dependencies.
-npm i
+Each section contains **clear checklist items**.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Capture Photo Evidence
+
+Users can capture photos directly from their phone.
+
+Mandatory photos include:
+
+* Front view
+* Rear view
+* Chassis number
+* Odometer
+* Left side
+* Right side
+
+This ensures **visual proof of vehicle condition**.
+
+### Identify Issues
+
+For every inspection item the user can:
+
+* Mark **Pass**
+* Mark **Issue**
+* Add comments
+* Attach supporting photos
+
+### Generate a Professional Report
+
+After completing the inspection, Inspectra generates a **downloadable PDF report** that includes:
+
+* Motorcycle details
+* Full inspection checklist
+* Photo evidence
+* Timestamp
+
+This report can be **saved or shared as documentation**.
+
+# Product Flow
+
+```
+Open App
+   ↓
+Enter Bike Details
+   ↓
+Start Guided Inspection
+   ↓
+Capture Mandatory Photos
+   ↓
+Review Inspection Summary
+   ↓
+Generate PDF Report
 ```
 
-**Edit a file directly in GitHub**
+A complete inspection should take **less than 10 minutes**.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Core Features (MVP)
 
-**Use GitHub Codespaces**
+* Mobile-first responsive interface
+* Structured inspection checklist
+* Pass / Issue status tracking
+* Optional comments
+* Camera photo capture
+* Mandatory photo validation
+* Inspection progress tracking
+* Inspection summary screen
+* Auto-generated PDF report
+* Local data storage during inspection
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Data Model
 
-## What technologies are used for this project?
+### Bike
 
-This project is built with:
+```
+VIN
+EngineNumber
+Model
+Color
+DealerName
+Odometer
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Inspection
 
-## How can I deploy this project?
+```
+InspectionID
+BikeID
+Date
+TotalChecks
+PassedChecks
+FailedChecks
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Checklist Item
 
-## Can I connect a custom domain to my Lovable project?
+```
+Section
+Description
+Status
+Comment
+PhotoURL
+```
 
-Yes, you can!
+### Photos
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+InspectionID
+ImageType
+FileURL
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Tech Stack
+
+**Frontend**
+
+* React / Next.js
+* Mobile-optimized UI
+* Camera integration
+
+**Backend**
+
+* Node.js / Firebase / Supabase
+
+**Storage**
+
+* Cloud image storage
+
+**Reporting**
+
+* PDF report generation
+
+# Design Principles
+
+Inspectra is built with three core principles:
+
+**1. Simplicity**
+
+The interface must be usable by **first-time motorcycle buyers without training**.
+
+**2. Speed**
+
+A complete inspection should take **under 10 minutes**.
+
+**3. Proof**
+
+Every inspection should produce **clear, verifiable documentation**.
+
+# Roadmap
+
+Future versions of Inspectra may include:
+
+* Support for multiple motorcycle models
+* Custom inspection templates
+* Dealer dashboards
+* Manufacturer integrations
+* Cloud inspection history
+* Warranty claim support
+* Fleet and enterprise inspection workflows
+
+# Vision
+
+Inspectra aims to become a **universal inspection platform** for vehicle quality assurance.
+
+From **individual buyers** to **enterprise dealerships**, Inspectra will help ensure that every vehicle delivery is **transparent, documented, and verifiable**.
