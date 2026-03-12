@@ -1,5 +1,5 @@
-import { Shield, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Shield, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -7,7 +7,11 @@ interface WelcomeScreenProps {
   hasExisting: boolean;
 }
 
-const WelcomeScreen = ({ onStart, onResume, hasExisting }: WelcomeScreenProps) => {
+const WelcomeScreen = ({
+  onStart,
+  onResume,
+  hasExisting,
+}: WelcomeScreenProps) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 animate-slide-up">
       <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
@@ -15,13 +19,14 @@ const WelcomeScreen = ({ onStart, onResume, hasExisting }: WelcomeScreenProps) =
       </div>
 
       <h1 className="text-2xl font-display font-bold text-foreground text-center mb-2">
-        PDI INSPECTOR
+        Inspectra
       </h1>
       <p className="text-sm text-muted-foreground text-center mb-1 font-display">
         TRIUMPH SCRAMBLER 400 X
       </p>
       <p className="text-sm text-muted-foreground text-center mb-10 max-w-xs">
-        Complete a professional Pre-Delivery Inspection before accepting your motorcycle.
+        Complete a professional Pre-Delivery Inspection before accepting your
+        motorcycle.
       </p>
 
       <div className="w-full max-w-xs space-y-3">
