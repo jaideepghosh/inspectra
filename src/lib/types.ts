@@ -1,4 +1,4 @@
-export type ItemStatus = 'pass' | 'issue' | 'pending';
+export type ItemStatus = "pass" | "issue" | "pending";
 
 export interface BikeDetails {
   vin: string;
@@ -34,4 +34,10 @@ export interface InspectionData {
   completedAt: string | null;
   currentStep: number; // 0=welcome, 1=bike details, 2=checklist, 3=photos, 4=summary, 5=report
   currentSection: number;
+}
+
+export interface SavedReport {
+  id: string;
+  savedAt: string;
+  inspection: InspectionData;
 }
