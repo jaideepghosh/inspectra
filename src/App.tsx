@@ -30,7 +30,7 @@ const App = () => {
         <Sonner />
         {isAuthenticated ? (
           <>
-            <header className="flex justify-end p-4">
+            <header className="flex justify-end p-4 fixed w-full">
               <Button
                 variant="outline"
                 size="sm"
