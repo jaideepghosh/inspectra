@@ -9,11 +9,15 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { Shield } from "lucide-react";
 import { Button } from "./components/ui/button.tsx";
+import { usePWAUpdate } from "@/hooks/usePWAUpdate";
+import { useNetworkStatus } from "@/hooks/useNetworkStatus";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const { isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
+  usePWAUpdate();
+  useNetworkStatus();
 
   if (isLoading) {
     return (
