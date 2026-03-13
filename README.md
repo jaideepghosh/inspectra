@@ -1,4 +1,4 @@
-# Inspectra
+<img src="https://inspectra.jaideepghosh.com/logo.png" alt="Inspectra" width="200"/>
 
 **Buyer-centric vehicle inspection platform.**
 
