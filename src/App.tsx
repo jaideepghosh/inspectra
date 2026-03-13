@@ -53,12 +53,8 @@ const App = () => {
           </>
         ) : (
           <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 animate-slide-up">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-              <Shield className="w-8 h-8 text-primary" />
-            </div>
-
             <h1 className="text-2xl font-display font-bold text-foreground text-center mb-10">
-              Inspectra
+              <img src="/logo.png" width={200} />
             </h1>
 
             <div className="w-full max-w-xs space-y-3">

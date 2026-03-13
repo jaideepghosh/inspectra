@@ -14,12 +14,8 @@ const WelcomeScreen = ({
 }: WelcomeScreenProps) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 animate-slide-up">
-      <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-        <Shield className="w-8 h-8 text-primary" />
-      </div>
-
-      <h1 className="text-2xl font-display font-bold text-foreground text-center mb-2">
-        Inspectra
+      <h1 className="text-2xl font-display font-bold text-foreground text-center mb-10">
+        <img src="/logo.png" width={200} />
       </h1>
       <p className="text-sm text-muted-foreground text-center mb-1 font-display">
         TRIUMPH SCRAMBLER 400 X
