@@ -1,201 +1,56 @@
 <img src="https://inspectra.jaideepghosh.com/logo.png" alt="Inspectra" width="200"/>
 
-**Buyer-centric vehicle inspection platform.**
+Buyer-focused motorcycle **Pre-Delivery Inspection (PDI)** tool that guides users through a structured inspection, captures photo evidence, and generates a professional PDF report.
 
-Inspectra helps motorcycle buyers perform a **structured Pre-Delivery Inspection (PDI)** before accepting delivery from a dealership.
-
-The app guides buyers through a step-by-step checklist, captures photo evidence, and generates a **professional inspection report** within minutes.
+Inspectra is designed as an **enterprise-grade open source application** with secure authentication powered by **Auth0**, making it suitable for dealerships, inspection agencies, marketplaces, and individual buyers who want reliable inspection documentation.
 
 # Why Inspectra?
 
-Most buyers accept a motorcycle delivery **without performing a proper inspection**.
+Buying or receiving a motorcycle without proper inspection can lead to hidden defects, disputes, and unexpected repair costs. Inspectra solves this by providing a **structured, evidence-based inspection workflow** that ensures every critical component is checked and documented.
 
-Common problems include:
+With Inspectra you get:
 
-- Hidden scratches or cosmetic damage
-- Incorrect VIN or engine numbers
-- Odometer discrepancies
-- Missing accessories or documents
-- No proof if issues are discovered later
-
-Inspectra makes inspections **simple, structured, and evidence-based**.
+- **Standardized inspection workflows** to ensure no critical checks are missed.
+- **Verifiable visual evidence** through mandatory photo capture.
+- **Professional reports** that can be shared with sellers, buyers, or service providers.
+- **Secure access control** using Auth0 authentication.
+- **Enterprise-ready architecture** while remaining open source and customizable.
 
 # What You Can Do
 
 ### Guided Inspection
 
-Inspectra walks buyers through inspection sections step-by-step:
-
-- Bike Identity
-- Exterior Condition
-- Wheels & Tyres
-- Suspension & Chassis
-- Brakes
-- Engine & Controls
-- Electrical System
-- Instrument Cluster
-- Accessories & Documents
-
-Each section contains **clear checklist items**.
+Follow a structured, step-by-step motorcycle inspection covering all critical areas such as identity, exterior, tyres, suspension, brakes, engine, electrical systems, and accessories.
 
 ### Capture Photo Evidence
 
-Users can capture photos directly from their phone.
-
-Mandatory photos include:
-
-- Front view
-- Rear view
-- Chassis number
-- Odometer
-- Left side
-- Right side
-
-This ensures **visual proof of vehicle condition**.
+Capture mandatory photos such as front view, rear view, side view, chassis number, and odometer to create verifiable inspection documentation.
 
 ### Identify Issues
 
-For every inspection item the user can:
-
-- Mark **Pass**
-- Mark **Issue**
-- Add comments
-- Attach supporting photos
+Mark checklist items as **Pass** or **Issue**, add detailed comments, and attach additional photos to document problems clearly.
 
 ### Generate a Professional Report
 
-After completing the inspection, Inspectra generates a **downloadable PDF report** that includes:
+Automatically generate a **downloadable PDF report** containing inspection results, timestamps, comments, and embedded photo evidence.
 
-- Motorcycle details
-- Full inspection checklist
-- Photo evidence
-- Timestamp
+# Key Features
 
-This report can be **saved or shared as documentation**.
+- **Guided Inspection:** Step-by-step inspection sections (identity, exterior, wheels & tyres, suspension, brakes, engine & controls, electrical, instruments, accessories).
+- **Mandatory Photo Capture:** Enforces required photos (front/rear/side, chassis number, odometer) to provide verifiable evidence.
+- **Issue Tracking:** Mark items as Pass or Issue, add comments, and attach supporting photos.
+- **Progress & Validation:** Visual progress indicator and validation to ensure mandatory checks and photos are completed.
+- **Report Generation:** Auto-generated, downloadable PDF containing bike details, checklist results, timestamps, and embedded photos.
+- **Offline-First Local Storage:** Save inspections locally during capture to avoid data loss on intermittent connections.
+- **Mobile-First UI:** Optimized for phones with integrated camera support and responsive layout.
+- **Export & Share:** Download, save, or share inspection reports for documentation or dispute resolution.
+- **Secure Authentication:** Enterprise-ready authentication and access control using **Auth0**.
+- **Privacy-Conscious:** Local-first handling of sensitive data with optional cloud sync in configured deployments.
 
-# Product Flow
+# Ideal Use Cases
 
-```
-Open App
-   ↓
-Enter Bike Details
-   ↓
-Start Guided Inspection
-   ↓
-Capture Mandatory Photos
-   ↓
-Review Inspection Summary
-   ↓
-Generate PDF Report
-```
-
-A complete inspection should take **less than 10 minutes**.
-
-# Core Features (MVP)
-
-- Mobile-first responsive interface
-- Structured inspection checklist
-- Pass / Issue status tracking
-- Optional comments
-- Camera photo capture
-- Mandatory photo validation
-- Inspection progress tracking
-- Inspection summary screen
-- Auto-generated PDF report
-- Local data storage during inspection
-
-# Data Model
-
-### Bike
-
-```
-VIN
-EngineNumber
-Model
-Color
-DealerName
-Odometer
-```
-
-### Inspection
-
-```
-InspectionID
-BikeID
-Date
-TotalChecks
-PassedChecks
-FailedChecks
-```
-
-### Checklist Item
-
-```
-Section
-Description
-Status
-Comment
-PhotoURL
-```
-
-### Photos
-
-```
-InspectionID
-ImageType
-FileURL
-```
-
-# Tech Stack
-
-**Frontend**
-
-- React / Next.js
-- Mobile-optimized UI
-- Camera integration
-
-**Backend**
-
-- Node.js / Firebase / Supabase
-
-**Storage**
-
-- Cloud image storage
-
-**Reporting**
-
-- PDF report generation
-
-# Design Principles
-
-Inspectra is built with three core principles:
-
-**1. Simplicity**
-
-The interface must be usable by **first-time motorcycle buyers without training**.
-
-**2. Speed**
-
-A complete inspection should take **under 10 minutes**.
-
-**3. Proof**
-
-Every inspection should produce **clear, verifiable documentation**.
-
-# Roadmap
-
-Future versions of Inspectra may include:
-
-- Support for multiple motorcycle models
-- Custom inspection templates
-- Dealer dashboards
-- Manufacturer integrations
-- Cloud inspection history
-- Warranty claim support
-- Fleet and enterprise inspection workflows
-
-# Vision
-
-Inspectra aims to become a **universal inspection platform** for vehicle quality assurance.
-
-From **individual buyers** to **enterprise dealerships**, Inspectra will help ensure that every vehicle delivery is **transparent, documented, and verifiable**.
+- Motorcycle buyers performing **pre-delivery inspections**
+- Dealerships verifying vehicle condition before handover
+- Inspection agencies documenting vehicle condition
+- Marketplaces enabling **trustworthy buyer reports**
+- Fleet managers auditing vehicle health
