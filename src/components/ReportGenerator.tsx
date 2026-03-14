@@ -382,10 +382,130 @@ const ReportGenerator = ({
           }
 
           y += rowH + 1;
+
+          /* Inline comment under issue items */
+          if (item.comment) {
+            guard(8);
+            doc.setFillColor(255, 247, 237);
+            doc.rect(margin + 2, y - 1, contentW - 2, 7, "F");
+            doc.setFont("helvetica", "italic");
+            doc.setFontSize(6.5);
+            doc.setTextColor(154, 52, 18);
+            const commentLines = doc.splitTextToSize(
+              `Note: ${item.comment}`,
+              contentW - 18,
+            );
+            doc.text(commentLines[0], margin + 13, y + 4);
+            y += 8;
+          }
         });
 
         y += 5;
       }
+
+      /* ── HELPER: draw a photo grid section ── */
+      const drawPhotoSection = (
+        title: string,
+        accentRgb: [number, number, number],
+        photos: { photoUrl: string; label: string; sublabel?: string }[],
+      ) => {
+        if (photos.length === 0) return;
+
+        guard(18);
+
+        /* Section header */
+        doc.setFillColor(24, 24, 28);
+        doc.rect(margin, y - 1, contentW, 10, "F");
+        doc.setFillColor(...accentRgb);
+        doc.rect(margin, y - 1, 3, 10, "F");
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        doc.setTextColor(200, 200, 220);
+        doc.text(title, margin + 6, y + 6);
+        y += 13;
+
+        const cols = 2;
+        const gap = 4;
+        const imgW = (contentW - gap) / cols;
+        const imgH = imgW * 0.65; // ~approx 3:2 ratio
+        const captionH = 12;
+        const rowH = imgH + captionH + 4;
+
+        for (let i = 0; i < photos.length; i += cols) {
+          guard(rowH);
+
+          for (let col = 0; col < cols; col++) {
+            const photo = photos[i + col];
+            if (!photo) continue;
+
+            const x = margin + col * (imgW + gap);
+
+            /* Image */
+            try {
+              const fmt = photo.photoUrl.startsWith("data:image/png")
+                ? "PNG"
+                : "JPEG";
+              doc.addImage(photo.photoUrl, fmt, x, y, imgW, imgH);
+            } catch {
+              /* draw placeholder if image fails */
+              doc.setFillColor(40, 40, 44);
+              doc.roundedRect(x, y, imgW, imgH, 1, 1, "F");
+              doc.setFont("helvetica", "normal");
+              doc.setFontSize(7);
+              doc.setTextColor(120, 120, 120);
+              doc.text("Image unavailable", x + imgW / 2, y + imgH / 2, {
+                align: "center",
+              });
+            }
+
+            /* Label */
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(7.5);
+            doc.setTextColor(40, 40, 40);
+            const labelLines = doc.splitTextToSize(photo.label, imgW);
+            doc.text(labelLines[0], x, y + imgH + 5);
+
+            /* Sub-label */
+            if (photo.sublabel) {
+              doc.setFont("helvetica", "italic");
+              doc.setFontSize(6.5);
+              doc.setTextColor(100, 100, 100);
+              const subLines = doc.splitTextToSize(photo.sublabel, imgW);
+              doc.text(subLines[0], x, y + imgH + 10);
+            }
+          }
+
+          y += rowH + 4;
+        }
+
+        y += 5;
+      };
+
+      /* ── MANDATORY PHOTOS ── */
+      drawPhotoSection(
+        "MANDATORY PHOTOS",
+        [251, 191, 36],
+        data.mandatoryPhotos
+          .filter((p) => p.photoUrl)
+          .map((p) => ({
+            photoUrl: p.photoUrl!,
+            label: p.label,
+            sublabel: p.description,
+          })),
+      );
+
+      /* ── ISSUE / ITEM PHOTOS ── */
+      drawPhotoSection(
+        "ISSUE PHOTOS",
+        [239, 68, 68],
+        data.checklist
+          .filter((i) => i.photoUrl)
+          .map((i) => ({
+            photoUrl: i.photoUrl!,
+            label: i.description,
+            sublabel: i.comment || undefined,
+          })),
+      );
 
       /* ── FOOTER (every page) ── */
       const totalPages = (doc.internal as any).getNumberOfPages();
