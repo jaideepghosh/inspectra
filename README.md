@@ -6,19 +6,17 @@ Inspectra helps motorcycle buyers perform a **structured Pre-Delivery Inspection
 
 The app guides buyers through a step-by-step checklist, captures photo evidence, and generates a **professional inspection report** within minutes.
 
-The first supported motorcycle is the **Triumph Scrambler 400 X**.
-
 # Why Inspectra?
 
 Most buyers accept a motorcycle delivery **without performing a proper inspection**.
 
 Common problems include:
 
-* Hidden scratches or cosmetic damage
-* Incorrect VIN or engine numbers
-* Odometer discrepancies
-* Missing accessories or documents
-* No proof if issues are discovered later
+- Hidden scratches or cosmetic damage
+- Incorrect VIN or engine numbers
+- Odometer discrepancies
+- Missing accessories or documents
+- No proof if issues are discovered later
 
 Inspectra makes inspections **simple, structured, and evidence-based**.
 
@@ -28,15 +26,15 @@ Inspectra makes inspections **simple, structured, and evidence-based**.
 
 Inspectra walks buyers through inspection sections step-by-step:
 
-* Bike Identity
-* Exterior Condition
-* Wheels & Tyres
-* Suspension & Chassis
-* Brakes
-* Engine & Controls
-* Electrical System
-* Instrument Cluster
-* Accessories & Documents
+- Bike Identity
+- Exterior Condition
+- Wheels & Tyres
+- Suspension & Chassis
+- Brakes
+- Engine & Controls
+- Electrical System
+- Instrument Cluster
+- Accessories & Documents
 
 Each section contains **clear checklist items**.
 
@@ -46,12 +44,12 @@ Users can capture photos directly from their phone.
 
 Mandatory photos include:
 
-* Front view
-* Rear view
-* Chassis number
-* Odometer
-* Left side
-* Right side
+- Front view
+- Rear view
+- Chassis number
+- Odometer
+- Left side
+- Right side
 
 This ensures **visual proof of vehicle condition**.
 
@@ -59,19 +57,19 @@ This ensures **visual proof of vehicle condition**.
 
 For every inspection item the user can:
 
-* Mark **Pass**
-* Mark **Issue**
-* Add comments
-* Attach supporting photos
+- Mark **Pass**
+- Mark **Issue**
+- Add comments
+- Attach supporting photos
 
 ### Generate a Professional Report
 
 After completing the inspection, Inspectra generates a **downloadable PDF report** that includes:
 
-* Motorcycle details
-* Full inspection checklist
-* Photo evidence
-* Timestamp
+- Motorcycle details
+- Full inspection checklist
+- Photo evidence
+- Timestamp
 
 This report can be **saved or shared as documentation**.
 
@@ -95,16 +93,16 @@ A complete inspection should take **less than 10 minutes**.
 
 # Core Features (MVP)
 
-* Mobile-first responsive interface
-* Structured inspection checklist
-* Pass / Issue status tracking
-* Optional comments
-* Camera photo capture
-* Mandatory photo validation
-* Inspection progress tracking
-* Inspection summary screen
-* Auto-generated PDF report
-* Local data storage during inspection
+- Mobile-first responsive interface
+- Structured inspection checklist
+- Pass / Issue status tracking
+- Optional comments
+- Camera photo capture
+- Mandatory photo validation
+- Inspection progress tracking
+- Inspection summary screen
+- Auto-generated PDF report
+- Local data storage during inspection
 
 # Data Model
 
@@ -152,21 +150,21 @@ FileURL
 
 **Frontend**
 
-* React / Next.js
-* Mobile-optimized UI
-* Camera integration
+- React / Next.js
+- Mobile-optimized UI
+- Camera integration
 
 **Backend**
 
-* Node.js / Firebase / Supabase
+- Node.js / Firebase / Supabase
 
 **Storage**
 
-* Cloud image storage
+- Cloud image storage
 
 **Reporting**
 
-* PDF report generation
+- PDF report generation
 
 # Design Principles
 
@@ -188,13 +186,13 @@ Every inspection should produce **clear, verifiable documentation**.
 
 Future versions of Inspectra may include:
 
-* Support for multiple motorcycle models
-* Custom inspection templates
-* Dealer dashboards
-* Manufacturer integrations
-* Cloud inspection history
-* Warranty claim support
-* Fleet and enterprise inspection workflows
+- Support for multiple motorcycle models
+- Custom inspection templates
+- Dealer dashboards
+- Manufacturer integrations
+- Cloud inspection history
+- Warranty claim support
+- Fleet and enterprise inspection workflows
 
 # Vision
 

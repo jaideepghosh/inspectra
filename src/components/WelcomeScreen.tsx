@@ -17,9 +17,6 @@ const WelcomeScreen = ({
       <h1 className="text-2xl font-display font-bold text-foreground text-center mb-10">
         <img src="/logo.png" width={200} />
       </h1>
-      <p className="text-sm text-muted-foreground text-center mb-1 font-display">
-        TRIUMPH SCRAMBLER 400 X
-      </p>
       <p className="text-sm text-muted-foreground text-center mb-10 max-w-xs">
         Complete a professional Pre-Delivery Inspection before accepting your
         motorcycle.
