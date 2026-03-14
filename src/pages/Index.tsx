@@ -1,6 +1,7 @@
 import { useInspection } from "@/lib/inspection-context";
 import { loadBikeDetails } from "@/lib/inspection-store";
 import WelcomeScreen from "@/components/WelcomeScreen";
+import BrandModelSelector from "@/components/BrandModelSelector";
 import BikeDetailsForm from "@/components/BikeDetailsForm";
 import InspectionChecklist from "@/components/InspectionChecklist";
 import PhotoCapture from "@/components/PhotoCapture";
@@ -16,6 +17,7 @@ const Index = () => {
     handleNewInspection,
     handleResume,
     handleFullReset,
+    submitBrandModel,
     submitBikeDetails,
     updateChecklistItem,
     updateSectionIndex,
@@ -42,9 +44,10 @@ const Index = () => {
   if (step === 1) {
     return (
       <div className="max-w-lg mx-auto">
-        <BikeDetailsForm
-          initial={loadBikeDetails() ?? data.bike}
-          onSubmit={submitBikeDetails}
+        <BrandModelSelector
+          initialBrand={data.bike.brand}
+          initialModel={data.bike.model}
+          onSubmit={submitBrandModel}
           onBack={() => goTo(0)}
         />
       </div>
@@ -54,12 +57,9 @@ const Index = () => {
   if (step === 2) {
     return (
       <div className="max-w-lg mx-auto">
-        <InspectionChecklist
-          items={data.checklist}
-          currentSection={data.currentSection}
-          onUpdateItem={updateChecklistItem}
-          onSectionChange={updateSectionIndex}
-          onComplete={completeChecklist}
+        <BikeDetailsForm
+          initial={loadBikeDetails() ?? data.bike}
+          onSubmit={submitBikeDetails}
           onBack={() => goTo(1)}
         />
       </div>
@@ -69,11 +69,12 @@ const Index = () => {
   if (step === 3) {
     return (
       <div className="max-w-lg mx-auto">
-        <PhotoCapture
-          photos={data.mandatoryPhotos}
-          onUpdatePhoto={updatePhoto}
-          onRemovePhoto={removePhoto}
-          onComplete={completePhotos}
+        <InspectionChecklist
+          items={data.checklist}
+          currentSection={data.currentSection}
+          onUpdateItem={updateChecklistItem}
+          onSectionChange={updateSectionIndex}
+          onComplete={completeChecklist}
           onBack={() => goTo(2)}
         />
       </div>
@@ -83,9 +84,11 @@ const Index = () => {
   if (step === 4) {
     return (
       <div className="max-w-lg mx-auto">
-        <InspectionSummary
-          data={data}
-          onGenerateReport={() => goTo(5)}
+        <PhotoCapture
+          photos={data.mandatoryPhotos}
+          onUpdatePhoto={updatePhoto}
+          onRemovePhoto={removePhoto}
+          onComplete={completePhotos}
           onBack={() => goTo(3)}
         />
       </div>
@@ -95,9 +98,21 @@ const Index = () => {
   if (step === 5) {
     return (
       <div className="max-w-lg mx-auto">
+        <InspectionSummary
+          data={data}
+          onGenerateReport={() => goTo(6)}
+          onBack={() => goTo(4)}
+        />
+      </div>
+    );
+  }
+
+  if (step === 6) {
+    return (
+      <div className="max-w-lg mx-auto">
         <ReportGenerator
           data={data}
-          onBack={() => goTo(4)}
+          onBack={() => goTo(5)}
           onNewInspection={handleFullReset}
         />
       </div>

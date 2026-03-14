@@ -145,7 +145,13 @@ const ReportGenerator = ({
       doc.setFont("helvetica", "normal");
       doc.setFontSize(8.5);
       doc.setTextColor(180, 180, 180);
-      doc.text(data.bike.model, margin, 21);
+      doc.text(
+        data.bike.brand
+          ? `${data.bike.brand}  ·  ${data.bike.model}`
+          : data.bike.model,
+        margin,
+        21,
+      );
 
       doc.setFontSize(7.5);
       doc.setTextColor(120, 120, 120);
@@ -235,6 +241,8 @@ const ReportGenerator = ({
 
       /* ── BIKE DETAILS ── */
       const details: [string, string][] = [
+        ["Brand", data.bike.brand || "—"],
+        ["Model", data.bike.model || "—"],
         ["VIN", data.bike.vin || "—"],
         ["Engine No.", data.bike.engineNumber || "—"],
         ["Odometer", `${data.bike.odometer || "—"} km`],

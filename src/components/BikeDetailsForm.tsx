@@ -75,8 +75,11 @@ const BikeDetailsForm = ({
       </p>
 
       <div className="bg-card rounded-lg border border-border p-4 mb-4">
-        <p className="text-xs font-display text-primary mb-1">MODEL</p>
+        <p className="text-xs font-display text-primary mb-1">BRAND & MODEL</p>
         <p className="text-base font-semibold text-foreground">{form.model}</p>
+        {form.brand && (
+          <p className="text-sm text-muted-foreground mt-0.5">{form.brand}</p>
+        )}
       </div>
 
       <div className="space-y-4">

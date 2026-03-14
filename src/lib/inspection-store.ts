@@ -32,9 +32,10 @@ export function createNewInspection(): InspectionData {
   const data: InspectionData = {
     id: `insp-${Date.now()}`,
     bike: savedBike ?? {
+      brand: "",
       vin: "",
       engineNumber: "",
-      model: "Triumph Scrambler 400 X",
+      model: "",
       color: "",
       dealerName: "",
       odometer: "",

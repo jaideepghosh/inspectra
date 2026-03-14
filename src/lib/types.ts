@@ -1,6 +1,7 @@
 export type ItemStatus = "pass" | "issue" | "pending";
 
 export interface BikeDetails {
+  brand: string;
   vin: string;
   engineNumber: string;
   model: string;
@@ -32,7 +33,7 @@ export interface InspectionData {
   mandatoryPhotos: MandatoryPhoto[];
   startedAt: string;
   completedAt: string | null;
-  currentStep: number; // 0=welcome, 1=bike details, 2=checklist, 3=photos, 4=summary, 5=report
+  currentStep: number; // 0=welcome, 1=brand/model, 2=bike details, 3=checklist, 4=photos, 5=summary, 6=report
   currentSection: number;
 }
 

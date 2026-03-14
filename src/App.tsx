@@ -34,10 +34,11 @@ const App = () => {
         <Sonner />
         {isAuthenticated ? (
           <>
-            <header className="flex justify-end p-4 fixed w-full">
+            <header className="flex justify-end p-4 fixed w-full pointer-events-none">
               <Button
                 variant="outline"
                 size="sm"
+                className="pointer-events-auto"
                 onClick={() =>
                   logout({ logoutParams: { returnTo: window.location.origin } })
                 }

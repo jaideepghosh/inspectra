@@ -44,6 +44,7 @@ interface InspectionContextValue {
   handleFullReset: () => void;
 
   // Data mutations
+  submitBrandModel: (brand: string, model: string) => void;
   submitBikeDetails: (bike: BikeDetails) => void;
   updateChecklistItem: (
     itemId: string,
@@ -116,13 +117,25 @@ export function InspectionProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // ── Mutations ───────────────────────────────
+  const submitBrandModel = useCallback(
+    (brand: string, model: string) => {
+      setData((prev) => {
+        if (!prev) return prev;
+        const updatedBike = { ...prev.bike, brand, model };
+        return storUpdateBikeDetails(prev, updatedBike);
+      });
+      goTo(2);
+    },
+    [goTo],
+  );
+
   const submitBikeDetails = useCallback(
     (bike: BikeDetails) => {
       setData((prev) => {
         if (!prev) return prev;
         return storUpdateBikeDetails(prev, bike);
       });
-      goTo(2);
+      goTo(3);
     },
     [goTo],
   );
@@ -157,7 +170,7 @@ export function InspectionProvider({ children }: { children: ReactNode }) {
       saveInspection(synced);
       return synced;
     });
-    goTo(3);
+    goTo(4);
   }, [goTo]);
 
   const updatePhoto = useCallback((photoId: string, photoUrl: string) => {
@@ -193,7 +206,7 @@ export function InspectionProvider({ children }: { children: ReactNode }) {
       saveInspection(completed);
       return completed;
     });
-    goTo(4);
+    goTo(5);
   }, [goTo]);
 
   // ── Saved reports ───────────────────────────
@@ -219,6 +232,7 @@ export function InspectionProvider({ children }: { children: ReactNode }) {
         handleNewInspection,
         handleResume,
         handleFullReset,
+        submitBrandModel,
         submitBikeDetails,
         updateChecklistItem,
         updateSectionIndex,
