@@ -536,10 +536,10 @@ const ReportGenerator = ({
   };
 
   return (
-    <div className="min-h-screen px-4 py-6 flex flex-col items-center justify-center">
+    <div className="min-h-screen px-4 py-6 flex flex-col items-center justify-center relative">
       <button
         onClick={onBack}
-        className="self-start flex items-center text-muted-foreground mb-10 text-sm"
+        className="absolute top-4 left-4 flex items-center text-muted-foreground text-sm"
       >
         <ArrowLeft className="w-4 h-4 mr-1" /> Back
       </button>
