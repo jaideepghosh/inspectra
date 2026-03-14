@@ -4,6 +4,8 @@ Buyer-focused motorcycle **Pre-Delivery Inspection (PDI)** tool that guides user
 
 Inspectra is designed as an **enterprise-grade open source application** with secure authentication powered by **Auth0**, making it suitable for dealerships, inspection agencies, marketplaces, and individual buyers who want reliable inspection documentation.
 
+![Inspectra Screens](https://github.com/user-attachments/assets/89ddeec0-4049-43b7-8446-56b79ab17e2b)
+
 # Why Inspectra?
 
 Buying or receiving a motorcycle without proper inspection can lead to hidden defects, disputes, and unexpected repair costs. Inspectra solves this by providing a **structured, evidence-based inspection workflow** that ensures every critical component is checked and documented.
