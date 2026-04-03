@@ -1,4 +1,9 @@
+<div align="center">
 <img src="https://inspectra.jaideepghosh.com/logo.png" alt="Inspectra" width="200"/>
+
+[![Deploy to GitHub Pages](https://github.com/jaideepghosh/inspectra/actions/workflows/deploy.yml/badge.svg)](https://github.com/jaideepghosh/inspectra/actions/workflows/deploy.yml)
+  
+</div>
 
 Buyer-focused motorcycle **Pre-Delivery Inspection (PDI)** tool that guides users through a structured inspection, captures photo evidence, and generates a professional PDF report.
 
